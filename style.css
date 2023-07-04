@@ -1,0 +1,272 @@
+body {
+  width: 80%;
+  max-width: 360px;
+  margin: 0 auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #389f917b;
+  /* background-image: url(images/SensibleSoccerRef7.png);
+  background-size: cover;
+  background-position: top;
+  background-position-y: -15rem; */
+}
+
+header {
+  height: 100px;
+  background-color: #389f91;
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: 900;
+  width: 100%;
+  background-color: #389f91;
+  color: #fdfffc;
+  padding: 10px 0;
+  letter-spacing: 0.5rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 3rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: #ef6c01;
+}
+
+a:hover {
+  color: #ef6c01;
+  font-weight: 900;
+}
+
+legend {
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+}
+input {
+  text-align: center;
+}
+
+img {
+  height: 50px;
+  object-fit: cover;
+}
+
+.form-name-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.playerAndTeam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  margin: 0 2rem;
+  padding: 10px;
+}
+
+input[type="radio"] {
+  position: fixed;
+  opacity: 0;
+}
+
+fieldset {
+  display: flex;
+  justify-content: center;
+  /* margin: 2rem; */
+}
+
+.team-box:hover {
+  background-color: #ef6c01;
+  border-radius: 15px;
+}
+
+.team-box:active {
+  transition: 0.3s;
+  transform: scale(0.8);
+}
+
+.team-box:visited {
+  background-color: #ef6c01;
+  border-radius: 15px;
+}
+
+.play-button {
+  margin-top: 2rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  color: #fdfffc;
+  background-color: #389f91;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+  color: #fdfffc;
+}
+.play-button:hover {
+  background-color: #ef6c01;
+  color: #fdfffc;
+}
+
+.play-button:active {
+  color: #fdfffc;
+  transition: 0.5s;
+  transform: scale(0.8);
+}
+
+a {
+  text-decoration: none;
+  color: #fdfffc;
+}
+
+.game-header-container {
+  background-color: #ef6c01;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+
+  height: 2rem;
+  padding: 0 2rem;
+}
+
+#game-header-name,
+#team-badge {
+  color: #fdfffc;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 12px;
+}
+
+.play-window-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+
+  height: 300px;
+  padding: 5px;
+}
+
+#play-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #031627;
+  width: 100%;
+  height: 100%;
+  color: #fdfffc;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.commentary-container {
+  height: 50px;
+
+  padding: 5px;
+}
+
+#commentary {
+  border: #ef6c01 solid 2px;
+  background-color: #ef6c01b1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+
+  margin: 2rem 0;
+  padding: 5px;
+}
+
+#button-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fdfffc;
+  height: 100%;
+  width: 30%;
+  background-color: #ef6c01;
+}
+
+#button-one:hover {
+  background-color: #031627;
+}
+
+#button-one:active {
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
+#button-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fdfffc;
+  height: 100%;
+  width: 30%;
+  background-color: #ef6c01;
+}
+
+#button-two:hover {
+  background-color: #031627;
+}
+
+#button-two:active {
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
+#button-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fdfffc;
+  height: 100%;
+  width: 30%;
+  background-color: #ef6c01;
+}
+
+#button-three:hover {
+  background-color: #031627;
+}
+
+#button-three:active {
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+  background-color: #389f91;
+  color: #fdfffc;
+}
+
+h6 {
+  font-size: 10px;
+}

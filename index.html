@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Fun Footy Game" />
+    <title>Footy Footy</title>
+  </head>
+  <body>
+    <header>
+      <header>
+        <h1>FOOTY FOOTY</h1>
+        <nav>
+          <ul>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="league.html">LEAGUE</a></li>
+          </ul>
+        </nav>
+      </header>
+    </header>
+    <main>
+      <section class="form-name-container">
+        <form>
+          <div class="playerAndTeam">
+            <fieldset>
+              <legend>Player Name:</legend>
+              <label for="playerName"></label>
+              <input
+                type="text"
+                id="playerName"
+                name="player-input"
+                placeholder="Enter Your Name"
+              />
+            </fieldset>
+            <fieldset id="playerTeam" class="team-field">
+              <legend>Pick a Team:</legend>
+
+              <input
+                type="radio"
+                id="newcastle"
+                name="team"
+                value="Newcastle"
+              />
+              <label for="newcastle" class="team-box">
+                <img
+                  src="images/Newcastle_United_Logo.svg.png"
+                  alt="Newcastle Badge"
+                />
+              </label>
+
+              <input type="radio" id="arsenal" name="team" value="Arsenal" />
+              <label for="arsenal" class="team-box">
+                <img src="images/Arsenal_FC.svg" alt="Arsenal Badge" />
+              </label>
+
+              <input type="radio" id="west-ham" name="team" value="West Ham" />
+              <label for="west-ham" class="team-box">
+                <img
+                  src="images/West_Ham_United_FC_logo.svg.png"
+                  alt="West Ham Badge"
+                />
+              </label>
+            </fieldset>
+            <button id="letsPlay" class="play-button">LET'S PLAY</button>
+          </div>
+        </form>
+      </section>
+      <section class="game-header-container">
+        <div id="game-header-name"></div>
+        <div id="team-badge"></div>
+      </section>
+      <section class="play-window-container">
+        <article id="play-window"></article>
+      </section>
+      <section class="commentary-container">
+        <div id="commentary"></div>
+      </section>
+      <section class="button-container">
+        <div id="button-one">PASS</div>
+        <div id="button-two">SHOOT</div>
+        <div id="button-three">DRIBBLE</div>
+      </section>
+      <script src="app.js"></script>
+      <script src="game.js"></script>
+    </main>
+    <footer><h6>&#169; hiJINX GAMES</h6></footer>
+  </body>
+</html>
