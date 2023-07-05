@@ -114,7 +114,6 @@ fieldset {
   background-color: #389f91;
   letter-spacing: 0.2rem;
   font-weight: 900;
-  color: #fdfffc;
 }
 .play-button:hover {
   background-color: #ef6c01;
@@ -125,6 +124,17 @@ fieldset {
   color: #fdfffc;
   transition: 0.5s;
   transform: scale(0.8);
+}
+
+.no-entry {
+  margin-top: 2rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  color: #ffffffa3;
+  background-color: #5e5e5e2f;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
 }
 
 a {
@@ -188,6 +198,36 @@ a {
   justify-content: center;
   align-items: center;
   color: white;
+  text-align: center;
+}
+
+.new-encounter-container {
+  display: flex;
+  justify-content: center;
+  color: #fdfffc;
+  margin-bottom: 2rem;
+}
+
+.new-encounter {
+  margin-top: 2rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  color: #fdfffc;
+  background-color: #389f91;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+}
+.new-encounter:hover {
+  background-color: #ef6c01;
+}
+
+.new-encounter:active {
+  transition: 0.5s;
+  transform: scale(0.8);
+}
+
+.new-encounter-off {
 }
 
 .button-container {
@@ -195,8 +235,10 @@ a {
   justify-content: space-around;
   height: 50px;
 
-  margin: 2rem 0;
   padding: 5px;
+}
+
+.button-container-off {
 }
 
 #button-one {
@@ -256,6 +298,33 @@ a {
   transform: scale(0.9);
 }
 
+.league-button-container {
+  display: flex;
+  justify-content: center;
+  color: #fdfffc;
+  margin-bottom: 20px;
+}
+
+.league-button {
+  margin-top: 2rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  color: #fdfffc;
+  background-color: #389f91;
+  letter-spacing: 0.2rem;
+  font-weight: 900;
+}
+
+.league-button:hover {
+  background-color: #ef6c01;
+}
+
+.league-button:active {
+  transition: 0.5s;
+  transform: scale(0.8);
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -263,7 +332,7 @@ footer {
   height: 50px;
   width: 100%;
   bottom: 0;
-  background-color: #389f91;
+  background-color: #ef6c01b0;
   color: #fdfffc;
 }
 
