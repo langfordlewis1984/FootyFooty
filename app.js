@@ -6,7 +6,7 @@ const letsPlay = document.getElementById("letsPlay");
 const displayPlayerName = document.getElementById("game-header-name");
 const displayPlayerTeam = document.getElementById("team-badge");
 
-let playerData = [];
+let allPlayerData = [];
 
 function Player(playerName, playerTeam) {
   this.playerName = playerName;
@@ -14,20 +14,36 @@ function Player(playerName, playerTeam) {
   this.playerTouches = 0;
   this.playerScore = 0;
   this.playerEncounters = 0;
-  playerData.push(this);
-  saveToLocalStorage();
+  this.playerData = [];
+  allPlayerData.push(this);
+  this.setPlayerTeam = function (team) {
+    this.playerTeam = team;
+    saveToLocalStorage();
+  };
+}
+
+function assignPlayerIndex() {
+  const playerName = nameInput.value;
+  for (let i = 0; i < allPlayerData.length; i++) {
+    if (allPlayerData[i].playerName === playerName) {
+      currentPlayerIndex = i;
+      break;
+    }
+  }
 }
 
 function saveToLocalStorage() {
-  localStorage.setItem("playerData", JSON.stringify(playerData));
+  localStorage.setItem("allPlayerData", JSON.stringify(allPlayerData));
 }
 
 function loadItems() {
-  let storedData = JSON.parse(localStorage.getItem("playerData"));
+  let storedData = JSON.parse(localStorage.getItem("allPlayerData"));
   if (storedData) {
-    playerData = storedData;
+    allPlayerData = storedData;
   }
 }
+
+let teamSelectionMade = false;
 
 function isSelected() {
   let newcastle = document.getElementById("newcastle");
@@ -51,6 +67,8 @@ const handleLetsPlay = function (event) {
 
   letsPlay.removeEventListener("click", handleLetsPlay);
 
+  loadItems(allPlayerData);
+
   letsPlay.className = "no-entry";
   letsPlay.textContent = "Scroll Down";
   commentary.textContent = "Here We Go! - Click NEW ENCOUNTER!";
@@ -62,27 +80,30 @@ const handleLetsPlay = function (event) {
   document.getElementById("arsenal").disabled = true;
   document.getElementById("west-ham").disabled = true;
 
-  let newPlayer = new Player(playerName, playerTeam);
-  isSelected();
+  teamSelectionMade = true;
 
-  console.log(playerData);
+  let currentPlayer;
+  for (let i = 0; i < allPlayerData.length; i++) {
+    if (allPlayerData[i].playerName === playerName) {
+      currentPlayer = allPlayerData[i];
+      break;
+    }
+  }
+
+  if (!currentPlayer) {
+    currentPlayer = new Player(playerName, playerTeam);
+  }
+
+  currentPlayer.playerData.push({
+    name: playerName,
+    team: playerTeam,
+    touches: 0,
+    score: 0,
+    encounters: 0,
+  });
+  assignPlayerIndex();
+
+  console.log(allPlayerData);
 };
 
 letsPlay.addEventListener("click", handleLetsPlay);
-
-// const myObj = {
-//   name: rich,
-//   age: 33
-// }
-
-// function Person(name, age) {
-//   this.name = name,
-//   this.age = age
-//   sayHi = function() {
-//   console.log(`Hi my name is ${this.name}`)
-// }
-// }
-
-// const rich = new Person(formName.value, formAge.value);
-
-//REINSTANTIATE TYPE OF OBJECT WHEN RETRIEVING DATA FROM STORAGE = PUT IT THROUGH THE CONSTRUCTOR FUNCTION AGAIN

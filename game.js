@@ -21,6 +21,8 @@ function getRandomTeammates() {
   return Math.floor(Math.random() * 2);
 }
 
+let currentPlayerIndex = 0;
+
 newEncounterBtn.addEventListener("click", handleEncounterClick);
 
 function passBtnClick() {
@@ -29,20 +31,15 @@ function passBtnClick() {
 
   if (outcome === "Success") {
     commentary.textContent = "Good Pass!";
-    playerData[0].playerTouches++;
-    console.log(playerData);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    newEncounterBtn.addEventListener("click", handleEncounterClick);
+    allPlayerData[currentPlayerIndex].playerTouches++;
+    console.log(allPlayerData);
+    saveToLocalStorage(allPlayerData);
   } else {
     commentary.textContent = "Ooooohhh, stray ball. Out of play";
-    console.log(playerData);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    newEncounterBtn.addEventListener("click", handleEncounterClick);
+    console.log(allPlayerData);
   }
+  disableButtons();
+  newEncounterBtn.addEventListener("click", handleEncounterClick);
 }
 
 function shootBtnClick() {
@@ -51,20 +48,17 @@ function shootBtnClick() {
 
   if (outcome === "Success") {
     commentary.textContent = "GGOOOOAAALLL!!";
-    playerData[0].playerScore++;
-    console.log(playerData);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    newEncounterBtn.addEventListener("click", handleEncounterClick);
+    allPlayerData[currentPlayerIndex].playerTouches++;
+    allPlayerData[currentPlayerIndex].playerScore++;
+    console.log(allPlayerData);
+    saveToLocalStorage(allPlayerData);
   } else {
     commentary.textContent = "Ooooohhh, missed the target!" || "Keeper Saves!";
-    console.log(playerData);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    newEncounterBtn.addEventListener("click", handleEncounterClick);
+    console.log(allPlayerData);
   }
+
+  disableButtons();
+  newEncounterBtn.addEventListener("click", handleEncounterClick);
 }
 
 function dribbleBtnClick() {
@@ -73,21 +67,16 @@ function dribbleBtnClick() {
 
   if (outcome === "Success") {
     commentary.textContent = "Bang Tidy Skills!";
-    playerData[0].playerTouches++;
-
-    console.log(playerData);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    newEncounterBtn.addEventListener("click", handleEncounterClick);
+    allPlayerData[currentPlayerIndex].playerTouches++;
+    console.log(allPlayerData);
+    saveToLocalStorage(allPlayerData);
   } else {
     commentary.textContent = "Tackled!";
-    console.log(playerData);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    newEncounterBtn.addEventListener("click", handleEncounterClick);
+    console.log(allPlayerData);
   }
+
+  disableButtons();
+  newEncounterBtn.addEventListener("click", handleEncounterClick);
 }
 
 function handleEncounterClick() {
@@ -102,16 +91,11 @@ function handleEncounterClick() {
 
     encounterElement.textContent = `Defenders: ${defenders}, Teammates: ${teammates}`;
     commentary.textContent = "choose an option below";
-    loadItems(playerData);
-    chooseOption();
+    enableButtons();
     newEncounterBtn.removeEventListener("click", handleEncounterClick);
   } else {
-    saveToLocalStorage(playerData);
     newEncounterBtn.removeEventListener("click", handleEncounterClick);
-    passBtn.removeEventListener("click", passBtnClick);
-    shootBtn.removeEventListener("click", shootBtnClick);
-    dribbleBtn.removeEventListener("click", dribbleBtnClick);
-    // leagueButton.addEventListener("click", handleLeagueClick);
+    disableButtons();
     encounterElement.textContent = "OUT OF ENCOUNTERS";
     commentary.textContent =
       "You are out of retries!\nCheck out the results in the league!";
@@ -119,19 +103,14 @@ function handleEncounterClick() {
   }
 }
 
-// function handleLeagueClick() {
-//   const goToLeaguePage = document.getElementById("league-button").onclick = function(){href=league.html
-
-// }
-
-function chooseOption() {
+function enableButtons() {
   passBtn.addEventListener("click", passBtnClick);
-
   shootBtn.addEventListener("click", shootBtnClick);
-
   dribbleBtn.addEventListener("click", dribbleBtnClick);
 }
 
-//inside a function where playerData exists console.log(playerData[0].playerTouches);
-
-//update playerdata each time
+function disableButtons() {
+  passBtn.removeEventListener("click", passBtnClick);
+  shootBtn.removeEventListener("click", shootBtnClick);
+  dribbleBtn.removeEventListener("click", dribbleBtnClick);
+}

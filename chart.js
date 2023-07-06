@@ -1,91 +1,135 @@
 "use strict";
 
+let allPlayerData = [];
+
+function loadItems() {
+  let storedData = JSON.parse(localStorage.getItem("allPlayerData"));
+  if (storedData) {
+    allPlayerData = storedData;
+  }
+}
+
+loadItems();
+
+console.log(allPlayerData);
+
+const article = document.createElement("article");
+container.appendChild(article);
+
+const table = document.createElement("table");
+article.appendChild(table);
+
+const headerRow = document.createElement("tr");
+table.appendChild(headerRow);
+
+const zeroPoint = document.createElement("th");
+headerRow.appendChild(zeroPoint);
+
+const teamText = document.createElement("th");
+teamText.textContent = "Team";
+headerRow.appendChild(teamText);
+
+const touchesText = document.createElement("th");
+touchesText.textContent = "Touches";
+headerRow.appendChild(touchesText);
+
+const goalsText = document.createElement("th");
+goalsText.textContent = "Goals";
+headerRow.appendChild(goalsText);
+
+function renderTable() {
+  for (let i = 0; i < allPlayerData.length; i++) {
+    const player = allPlayerData[i];
+
+    const tableRow = document.createElement("tr");
+    table.appendChild(tableRow);
+
+    const playerText = document.createElement("th");
+    playerText.textContent = player.playerName;
+    tableRow.appendChild(playerText);
+
+    const teamName = document.createElement("td");
+    teamName.textContent = player.playerTeam;
+    tableRow.appendChild(teamName);
+
+    const touchTotal = document.createElement("td");
+    touchTotal.textContent = player.playerTouches;
+    tableRow.appendChild(touchTotal);
+
+    const goalTotal = document.createElement("td");
+    goalTotal.textContent = player.playerScore;
+    tableRow.appendChild(goalTotal);
+  }
+}
+
+renderTable();
+
 let canvasElem = document.getElementById("chart");
 
+Chart.defaults.font.size = "8px";
+Chart.defaults.color = "#0c5b2d";
+
 function renderChart() {
-  // * - Instantiate a new AppState
+  loadChartItems();
 
-  let appState = new AppState();
-
-  // * - Use a method on that AppState to load vote data from localStorage.
-
-  appState.loadItems();
-
-  // * - Create a data object for chart.js using your AppState's allProducts array.
-
-  // Create empty arrays for names, views and clicks
-
-  let productNames = [];
-  let productViews = [];
-  let productClicks = [];
+  let names = [];
+  let touches = [];
+  let goals = [];
 
   // fill labels and data arrays
 
-  for (let i = 0; i < appState.allProducts.length; i++) {
-    productNames.push(appState.allProducts[i].name);
-    productViews.push(appState.allProducts[i].timesClicked);
-    productClicks.push(appState.allProducts[i].timesShown);
+  for (let i = 0; i < allPlayerData.length; i++) {
+    names.push(allPlayerData[i].playerName);
+    touches.push(allPlayerData[i].playerTouches);
+    goals.push(allPlayerData[i].playerScore);
   }
 
-  // set data values
+  //   // set data values
 
   const data = {
-    labels: productNames,
+    labels: names,
     datasets: [
       {
-        label: "Clicks",
-        data: productClicks,
-        backgroundColor: ["#fec601"],
-        borderColor: ["#0c5b2d"],
+        label: "Touches",
+        data: touches,
+        backgroundColor: ["#015c63"],
+        borderColor: ["#ef6c01"],
         borderWidth: 1,
       },
       {
-        label: "Views",
-        data: productViews,
-        backgroundColor: ["#0c5b2d"],
-        borderColor: ["#fec601"],
+        label: "Goals",
+        data: goals,
+        backgroundColor: ["#ef6c01"],
+        borderColor: ["#015c63"],
         borderWidth: 1,
       },
     ],
   };
 
-  // set chart configuration
+  //   // set chart configuration
 
   const config = {
     type: "bar",
     data: data,
   };
 
-  // call chart
+  //   // call chart
 
   const newChart = new Chart(canvasElem, config);
 }
 
-/* TODO:
- * - Instantiate a new AppState
- * - Use a method on that AppState to load vote data from localStorage.
- * - Create a data object for chart.js using your AppState's allProducts array.
- * - Combine the data object with configuration information for chart.js type, colors, etc
- * - Call chart.js with the configuration and the canvasElem
- *
- */
+function loadChartItems() {
+  let playerNames = [];
+  let playerTeams = [];
+  let playerTouches = [];
+  let playerGoals = [];
+
+  for (let i = 0; i < allPlayerData.length; i++) {
+    playerNames.push(allPlayerData[i].playerName);
+    playerTeams.push(allPlayerData[i].playerTeam);
+    playerTouches.push(allPlayerData[i].playerTouches);
+    playerGoals.push(allPlayerData[i].playerScore);
+  }
+}
 
 renderChart();
-
-
-
-
-loadItems();
-
-let playerNames = [];
-let playerTeams = [];
-let playerTouches = [];
-let playerGoals = [];
-
-for (let i = 0; i < playerData.length; i++){
-  playerNames.push(playerData[i].playerName);
-  playerTeams.push(playerData[i].playerTeam);
-  playerTouches.push(playerData[i].playerTouches);
-  playerGoals.push(playerData[i].playerScore);
-}
-}

@@ -1,9 +1,18 @@
+/* font-family: 'Bungee', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Space Grotesk', sans-serif; */
+
 body {
   width: 80%;
   max-width: 360px;
   margin: 0 auto;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
   background-color: #389f917b;
+  line-height: 1.6;
+
   /* background-image: url(images/SensibleSoccerRef7.png);
   background-size: cover;
   background-position: top;
@@ -11,25 +20,69 @@ body {
 }
 
 header {
-  height: 100px;
+  height: 110px;
   background-color: #389f91;
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
-  font-weight: 900;
   width: 100%;
   background-color: #389f91;
   color: #fdfffc;
   padding: 10px 0;
   letter-spacing: 0.5rem;
+  font-family: "Bungee", cursive;
+}
+
+h2 {
+  font-size: 15px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  width: 100%;
+  margin: 2rem 0;
+  color: #015c63;
+  padding: 10px 0;
+  letter-spacing: 0.5rem;
+}
+
+h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  color: #015c63;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+  color: #015c63;
+  box-shadow: #ef6c01;
+}
+
+h5 {
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 0.03rem;
+}
+
+#instructions {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 ul {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 3rem;
+  padding: 0 2.25rem 2rem;
 }
 
 a {
@@ -41,6 +94,21 @@ a {
 a:hover {
   color: #ef6c01;
   font-weight: 900;
+}
+
+p {
+  color: black;
+  font-size: 14px;
+  padding: 1rem;
+}
+
+.name {
+  text-align: center;
+}
+
+span {
+  font-size: 20px;
+  color: #ef6c01;
 }
 
 legend {
@@ -172,6 +240,8 @@ a {
 }
 
 #play-window {
+  border: #ef6c01 solid 2px;
+  background-image: url(images/PlayBG.jpg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,21 +254,25 @@ a {
 }
 
 .commentary-container {
-  height: 50px;
+  height: 75px;
 
   padding: 5px;
 }
 
 #commentary {
   border: #ef6c01 solid 2px;
-  background-color: #ef6c01b1;
+  background-image: url(images/scoreboard.webp);
+  object-fit: fill;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: yellow;
   text-align: center;
+  font-family: "VT323", monospace;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 
 .new-encounter-container {
@@ -245,14 +319,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fdfffc;
+  color: #fdfffccd;
   height: 100%;
   width: 30%;
   background-color: #ef6c01;
 }
 
 #button-one:hover {
-  background-color: #031627;
+  background-color: #015c63;
+  color: #fdfffc;
 }
 
 #button-one:active {
@@ -264,14 +339,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fdfffc;
+  color: #fdfffccd;
   height: 100%;
   width: 30%;
   background-color: #ef6c01;
 }
 
 #button-two:hover {
-  background-color: #031627;
+  background-color: #015c63;
+  color: #fdfffc;
 }
 
 #button-two:active {
@@ -283,14 +359,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fdfffc;
+  color: #fdfffccd;
   height: 100%;
   width: 30%;
   background-color: #ef6c01;
 }
 
 #button-three:hover {
-  background-color: #031627;
+  background-color: #015c63;
+  color: #fdfffc;
 }
 
 #button-three:active {
@@ -325,6 +402,9 @@ a {
   transform: scale(0.8);
 }
 
+.footer-container {
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -334,8 +414,47 @@ footer {
   bottom: 0;
   background-color: #ef6c01b0;
   color: #fdfffc;
+  margin-top: 2rem;
 }
 
 h6 {
   font-size: 10px;
+}
+
+table,
+th,
+td {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #015c63;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 1;
+  color: #031627;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+th {
+  background-color: #ef6c01;
+  color: #fdfffc;
+}
+
+.image-section {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+#ssr {
+  width: 100%;
+  height: auto;
+}
+
+#nick {
+  padding-left: 30px;
+  width: 100%;
+  height: auto;
 }

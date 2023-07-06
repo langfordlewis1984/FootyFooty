@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Lato:wght@100;300;400&family=VT323&display=swap" rel="stylesheet">
     <meta name="description" content="Fun Footy Game" />
     <title>Footy Footy</title>
   </head>
   <body>
     <header>
       <header>
-        <h1>FOOTBALL FUN</h1>
+        <h1>FOOTY FOOTY</h1>
         <nav>
           <ul>
             <li><a href="index.html">PLAY</a></li>
@@ -21,21 +24,15 @@
         </nav>
       </header>
     </header>
-    <main><h2>"PLAYER'S" SCORES</h2>
+    <main><h2>PLAYER SCORES</h2>
+      <section><div id="container"></div></section>
       <section id="chart-section">
         <canvas id="chart"></canvas>
       </section>
-          <!-- <td id="passCount">0</td> -->
-          <!-- <td id="shootCount">0</td> -->
-          <!-- <td id="dribbleCount">0</td> -->
-          <!-- <td id="scoreCount">0</td> -->
-            CHART GOES HERE
-            <canvas id="chart"></canvas>
-          </div>
-        </section>
-        <h2>SEE AS A GRAPH</h2>
+        
       </main>
-      <script></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+      <script src="chart.js"></script>
       <footer><h6>&#169; hiJINX GAMES</h6></footer>
     </body>
   </body>
