@@ -303,18 +303,12 @@ a {
   transform: scale(0.8);
 }
 
-.new-encounter-off {
-}
-
 .button-container {
   display: flex;
   justify-content: space-around;
   height: 50px;
 
   padding: 5px;
-}
-
-.button-container-off {
 }
 
 #button-one {
@@ -403,9 +397,6 @@ a {
 #refresh:active {
   transition: 0.5s;
   transform: scale(0.8);
-}
-
-.footer-container {
 }
 
 footer {
