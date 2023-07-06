@@ -23,8 +23,6 @@ function getRandomTeammates() {
 
 let currentPlayerIndex = 0;
 
-newEncounterBtn.addEventListener("click", handleEncounterClick);
-
 function passBtnClick() {
   let outcome = Math.random() < 0.5 ? "Success" : "Fail";
   console.log("Pass outcome:", outcome);
@@ -100,6 +98,7 @@ function handleEncounterClick() {
     commentary.textContent =
       "You are out of retries!\nCheck out the results in the league!";
     newEncounterBtn.removeEventListener("click", handleEncounterClick);
+    refresh.addEventListener("click", handleRefresh);
   }
 }
 

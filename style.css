@@ -100,6 +100,8 @@ p {
   color: black;
   font-size: 14px;
   padding: 1rem;
+  text-align: justify;
+  letter-spacing: 0.03rem;
 }
 
 .name {
@@ -375,14 +377,15 @@ a {
   transform: scale(0.9);
 }
 
-.league-button-container {
+.refresh-container {
   display: flex;
   justify-content: center;
   color: #fdfffc;
   margin-bottom: 20px;
 }
 
-.league-button {
+#refresh {
+  text-transform: uppercase;
   margin-top: 2rem;
   padding: 10px 30px;
   border-radius: 5px;
@@ -393,11 +396,11 @@ a {
   font-weight: 900;
 }
 
-.league-button:hover {
+#refresh:hover {
   background-color: #ef6c01;
 }
 
-.league-button:active {
+#refresh:active {
   transition: 0.5s;
   transform: scale(0.8);
 }
@@ -412,13 +415,14 @@ footer {
   height: 50px;
   width: 100%;
   bottom: 0;
-  background-color: #ef6c01b0;
+  background-color: #389f91;
   color: #fdfffc;
   margin-top: 2rem;
 }
 
 h6 {
   font-size: 10px;
+  font-family: "VT323", monospace;
 }
 
 table,

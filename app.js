@@ -3,6 +3,7 @@
 const nameInput = document.getElementById("playerName");
 
 const letsPlay = document.getElementById("letsPlay");
+const refresh = document.getElementById("refresh");
 const displayPlayerName = document.getElementById("game-header-name");
 const displayPlayerTeam = document.getElementById("team-badge");
 
@@ -102,8 +103,13 @@ const handleLetsPlay = function (event) {
     encounters: 0,
   });
   assignPlayerIndex();
+  newEncounterBtn.addEventListener("click", handleEncounterClick);
 
   console.log(allPlayerData);
 };
+
+function handleRefresh() {
+  window.location.reload();
+}
 
 letsPlay.addEventListener("click", handleLetsPlay);

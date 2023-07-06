@@ -22,8 +22,12 @@ article.appendChild(table);
 const headerRow = document.createElement("tr");
 table.appendChild(headerRow);
 
-const zeroPoint = document.createElement("th");
-headerRow.appendChild(zeroPoint);
+const position = document.createElement("th");
+headerRow.appendChild(position);
+
+const tableName = document.createElement("th");
+tableName.textContent = "Name";
+headerRow.appendChild(tableName);
 
 const teamText = document.createElement("th");
 teamText.textContent = "Team";
@@ -37,6 +41,8 @@ const goalsText = document.createElement("th");
 goalsText.textContent = "Goals";
 headerRow.appendChild(goalsText);
 
+let counter = 1;
+
 function renderTable() {
   for (let i = 0; i < allPlayerData.length; i++) {
     const player = allPlayerData[i];
@@ -44,7 +50,12 @@ function renderTable() {
     const tableRow = document.createElement("tr");
     table.appendChild(tableRow);
 
-    const playerText = document.createElement("th");
+    const position = document.createElement("th");
+    position.textContent = counter;
+    counter++;
+    tableRow.appendChild(position);
+
+    const playerText = document.createElement("td");
     playerText.textContent = player.playerName;
     tableRow.appendChild(playerText);
 
